@@ -38,7 +38,7 @@ The final Gold layer implements a **Dimensional Data Model (DDM)** with a Star S
 
 # 🏗️ Solution Architecture
 
-![DataForge Commerce Platform Architecture](images/architecture.png)
+![DataForge Commerce Platform Architecture](images/DataForge Commerce Platform Architecture.png)
 
 The platform follows a modern data engineering architecture:
 
