@@ -49,7 +49,7 @@ The final Gold layer implements a **Dimensional Data Model (DDM)** with a Star S
 
 The project uses a **Agentic DB-hosted PostgreSQL database** hosted through the Agentic DB / Ghost environment.
 
-The source schema is created using the project's DDL script:a
+The source schema is created using the project's DDL script:
 
 ```text
 ddl/
