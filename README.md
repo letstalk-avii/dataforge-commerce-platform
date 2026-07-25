@@ -40,36 +40,6 @@ The final Gold layer implements a **Dimensional Data Model (DDM)** with a Star S
 
 ![DataForge Commerce Platform Architecture](images/architecture.png)
 
-The platform follows a modern data engineering architecture:
-
-```text
-Agentic DB (PostgreSQL)
-                 │
-                 │ CDC / Incremental Updates
-                 ▼
-          Databricks Bronze
-                 │
-                 ▼
-        Spark Transformations
-                 │
-                 ▼
-         Silver / OBT Layer
-                 │
-                 ▼
-         Data Quality Checks
-                 │
-                 ▼
-          dbt Transformations
-                 │
-                 ▼
-          Gold / DDM Layer
-                 │
-                 ▼
-             Star Schema
-
-        Apache Airflow
-     Orchestrates the Workflow
-````
 
 ---
 
@@ -135,21 +105,6 @@ Source data is incrementally loaded into **Delta Tables**, providing a reliable 
 The Silver layer processes and enriches the Bronze data using **Apache Spark**.
 
 Multiple datasets are transformed and combined to create a consolidated **One Big Table (OBT)**.
-
-```text
-Bronze Tables
-     │
-     ├── Orders
-     ├── Customers
-     ├── Products
-     └── Other Business Entities
-              │
-              ▼
-      Spark Transformations
-              │
-              ▼
-        One Big Table
-```
 
 The OBT provides a unified business-level dataset that serves as the foundation for downstream analytical transformations.
 
@@ -288,8 +243,6 @@ Gold Data Models
 
 Airflow provides scheduling, task dependencies, retries, and pipeline monitoring.
 
-![Airflow DAG](images/airflow_dag.png)
-
 ---
 
 # 🛠️ Tech Stack
@@ -309,33 +262,24 @@ Airflow provides scheduling, task dependencies, retries, and pipeline monitoring
 ```text
 dataforge-commerce-platform
 │
-├── airflow
-│   └── dags
+├── config
+│   └── airflow.cfg
 │
-├── databricks
-│   ├── bronze
-│   ├── silver
-│   └── gold
-│
-├── dbt
-│   ├── models
-│   ├── macros
-│   ├── tests
-│   └── dbt_project.yml
-│
-├── data
-│   └── walmart_dataset
-│       └── data
-│
-├── ddl
-│   └── walmart_schema.sql
-│
+├── dags
+│   ├── orchestrate.py
+│   
 ├── images
 │   ├── architecture.png
 │   ├── bronze_layer.png
 │   ├── silver_layer.png
 │   ├── gold_layer.png
-│   └── airflow_dag.png
+│ 
+├── source/walmart_dataset
+│   ├── data
+│   ├── ddl
+│   ├── load_data.py
+│   
+├── walmart_project
 │
 ├── requirements.txt
 ├── docker-compose.yml
@@ -345,36 +289,13 @@ dataforge-commerce-platform
 
 ---
 
-# 🎯 Key Data Engineering Concepts
 
-This project demonstrates practical implementation of:
-
-* Change Data Capture (CDC)
-* Incremental Data Ingestion
-* Medallion Architecture
-* Databricks Lakehouse
-* Delta Lake
-* Apache Spark
-* One Big Table (OBT)
-* Data Quality Validation
-* dbt Transformations
-* dbt Macros
-* Incremental dbt Models
-* Dimensional Data Modeling
-* Star Schema
-* Slowly Changing Dimensions
-* Apache Airflow Orchestration
-* Dockerized Data Engineering Environment
-
----
 
 # 👨‍💻 Author
 
 **Avinash Kamble**
 
-Aspiring Azure Data Engineer
+Aspiring Data Engineer
 
 ---
-
-⭐ If you found this project useful, feel free to explore the repository and connect with me.
 
