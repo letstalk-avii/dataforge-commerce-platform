@@ -216,7 +216,9 @@ Apache Airflow is used to orchestrate the end-to-end workflow.
 
 The pipeline manages dependencies between ingestion, transformation, validation, and downstream modeling tasks.
 
-![Airflow](images/airflow.png)
+<p align="center">
+  <img src="images/airflow.png" alt="Airflow" width="450" height="600">
+</p>
 
 Airflow provides scheduling, task dependencies, retries, and pipeline monitoring.
 
