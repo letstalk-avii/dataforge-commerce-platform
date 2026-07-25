@@ -216,30 +216,7 @@ Apache Airflow is used to orchestrate the end-to-end workflow.
 
 The pipeline manages dependencies between ingestion, transformation, validation, and downstream modeling tasks.
 
-```text
-Source Data
-    │
-    ▼
-CDC / Incremental Ingestion
-    │
-    ▼
-Bronze Processing
-    │
-    ▼
-Spark / Silver Processing
-    │
-    ▼
-One Big Table
-    │
-    ▼
-Data Quality
-    │
-    ▼
-dbt Transformations
-    │
-    ▼
-Gold Data Models
-```
+![Airflow](images/airflow.png)
 
 Airflow provides scheduling, task dependencies, retries, and pipeline monitoring.
 
