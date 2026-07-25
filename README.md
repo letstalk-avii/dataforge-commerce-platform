@@ -1,7 +1,7 @@
 
 # 🛒 DataForge Commerce Platform
 
-> **Production-inspired End-to-End Commerce Data Engineering Platform built using Apache Airflow, Databricks, Delta Lake, dbt, PostgreSQL, Apache Spark, CDC, and Docker.**
+> **Production-inspired End-to-End Commerce Data Engineering Platform built using Apache Airflow, Databricks, Delta Lake, dbt, Agentic DB (PostgreSQL), Apache Spark, CDC, and Docker.**
 
 ---
 
@@ -9,7 +9,7 @@
 
 **DataForge Commerce Platform** is an end-to-end data engineering project designed to simulate a modern retail and commerce data platform.
 
-The project processes Walmart-style retail transactional data from a PostgreSQL-compatible operational source database and incrementally ingests the data into a Databricks Lakehouse using Change Data Capture (CDC).
+The project processes Walmart-style retail transactional data from a Agentic DB (PostgreSQL) operational source database and incrementally ingests the data into a Databricks Lakehouse using Change Data Capture (CDC).
 
 The platform follows a **Medallion Architecture**, where data moves through Bronze and Silver processing layers before being transformed into analytics-ready dimensional models using **dbt**.
 
@@ -20,7 +20,7 @@ The final Gold layer implements a **Dimensional Data Model (DDM)** with a Star S
 # 🚀 Key Features
 
 - 🔄 Change Data Capture (CDC) and Incremental Data Ingestion
-- 🗄️ PostgreSQL-Compatible Source Database
+- 🗄️Agentic DB (PostgreSQL) Source Database
 - 🧱 Databricks Lakehouse Architecture
 - 🥉 Bronze / Silver / Gold Medallion Architecture
 - ⚡ Apache Spark & Delta Lake
@@ -43,7 +43,7 @@ The final Gold layer implements a **Dimensional Data Model (DDM)** with a Star S
 The platform follows a modern data engineering architecture:
 
 ```text
-PostgreSQL-Compatible Source Database
+Agentic DB (PostgreSQL)
                  │
                  │ CDC / Incremental Updates
                  ▼
@@ -77,9 +77,9 @@ PostgreSQL-Compatible Source Database
 
 ## 1️⃣ Source Data
 
-The project uses a **PostgreSQL-compatible operational database** hosted through the Agentic DB / Ghost environment.
+The project uses a **Agentic DB-hosted PostgreSQL database** hosted through the Agentic DB / Ghost environment.
 
-The source schema is created using the project's DDL script:
+The source schema is created using the project's DDL script:a
 
 ```text
 ddl/
@@ -99,7 +99,7 @@ Changes from the source database are processed using a **CDC-based incremental i
 Instead of repeatedly processing the complete source dataset, the pipeline focuses on newly inserted or changed records.
 
 ```text
-Source Database
+Agentic DB (PostgreSQL)
       │
       │ CDC
       ▼
