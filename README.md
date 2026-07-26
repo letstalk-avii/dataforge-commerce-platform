@@ -1,7 +1,7 @@
 
 # 🛒 DataForge Commerce Platform
 
-> **Production-inspired End-to-End Commerce Data Engineering Platform built using Apache Airflow, Databricks, Delta Lake, dbt, Agentic DB (PostgreSQL), Apache Spark, CDC, and Docker.**
+> **Production-inspired End-to-End Commerce Data Engineering Platform built using Apache Airflow, Databricks, Delta Lake, dbt, Agentic DB (PostgreSQL), CDC, and Docker.**
 
 ---
 
